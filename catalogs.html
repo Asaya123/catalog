@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -80,13 +82,13 @@
         </div>
     </section>
 
-    <section id="cart-section">
-        <h2>Your Cart</h2>
+    <section id="cart_section3">
+        <h2>Your Lego Cart</h2>
         <ul id="itemsincart">
 
         </ul>
-        <div id="cart-total">
-            Total: $<span id="total-price">0</span>
+        <div id="total">
+            Total: $<span id="checkoutprice">0</span>
         </div>
     </section>
 
@@ -98,14 +100,13 @@
         function additem_tocart(itemName, itemPrice) {
     
             totalPrice += itemPrice;
-            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+            document.getElementById('checkoutprice').innerText = totalPrice.toFixed(1);
 
-            const itemList = document.getElementById('itemsincart');
+            const listofitems = document.getElementById('itemsincart');
             const li = document.createElement('li');
-            li.innerHTML = `${itemName} - $${itemPrice.toFixed(2)}`;
+            li.innerHTML = `${itemName} - $${itemPrice.toFixed(1)}`;
 
-         
-            itemList.appendChild(li);
+            listofitems.appendChild(li);
         }
     </script>
 </body>
